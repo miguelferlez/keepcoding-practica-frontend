@@ -1,0 +1,39 @@
+/* hamburger menu */
+
+.hamburger { display: none; }
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--primary-color);
+}
+
+/* buttons */
+
+.btn,
+.btn-outline {
+    padding: 12px 1rem;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        color: var(--bg-color);
+        border: 1px solid var(--primary-color-hover);
+        background-color: var(--primary-color-hover);
+    }
+}
+
+.btn {
+    color: var(--bg-color);
+    background-color: var(--primary-color);
+}
+
+.btn-outline {
+    color: var(--primary-color);
+    background-color: transparent;
+    
+}
