@@ -27,3 +27,9 @@ button {
     border: none;
 }
 
+.main {
+    width: 90%;
+    max-width: 1024px;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+}
