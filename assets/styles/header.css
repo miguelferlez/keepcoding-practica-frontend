@@ -58,7 +58,6 @@
 
     .hamburger {
         display: block;
-        cursor: pointer;
 
         &.active .bar:nth-child(2) {
             opacity: 0;
