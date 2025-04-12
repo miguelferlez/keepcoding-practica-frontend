@@ -1,5 +1,6 @@
 .header {
-    border-bottom: 1px solid var(--header-border-color);
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 3rem;
 }
 
 .navbar {
@@ -41,12 +42,12 @@
         width: 100%;
         padding: 0.5rem 1.5rem;
         gap: 0;
-        
+
         text-align: center;
-        
+
         background-color: var(--bg-color);
-        border-bottom: 1px solid var(--header-border-color);
-        
+        border-bottom: 1px solid var(--border-color);
+
         transition: 0.3s;
 
         &.active {
