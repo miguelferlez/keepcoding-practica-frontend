@@ -28,26 +28,11 @@
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
+    color: var(--text-color);
 }
 
 .card-text {
-    color: #6c757d;
-}
-
-
-.author {
-    color: gray;
-    font-weight: 400;
-    font-size: 11px;
-    padding-top: 20px;
-}
-
-.name {
-    font-weight: 600;
-}
-
-.name:hover {
-    cursor: pointer;
+    color: var(--text-color-light);
 }
 
 @media screen and (hover:hover) {
