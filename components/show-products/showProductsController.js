@@ -24,7 +24,10 @@ export async function showProducts(container) {
         const products = await getProducts();
         render(products, container);
     } catch (error) {
-        alert(error.message);
+        const failedLoad = new CustomEvent("load-products-failed", {
+            detail: error.message
+        });
+        container.dispatchEvent(failedLoad);
     } finally {
         const finishedLoad = new CustomEvent("load-products-finished");
         container.dispatchEvent(finishedLoad);

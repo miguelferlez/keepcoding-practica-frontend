@@ -2,6 +2,8 @@
     --bg-color: #ffffff;
     --primary-color: #ae3dd1;
     --primary-color-hover: #8d2faa;
+    --error-color: #f3614d;
+    --success-color: #3dd180;
     --text-color: #000000;
     --text-color-light: #6c757d;
     --border-radius: 0.5rem;
@@ -32,6 +34,8 @@ a {
 button {
     background-color: transparent;
     border: none;
+    display: flex;
+    padding: 0;
 }
 
 h1,
