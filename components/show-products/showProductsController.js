@@ -18,10 +18,16 @@ export async function showProducts(container) {
     };
 
     try {
+        const startedLoad = new CustomEvent("load-products-started");
+        container.dispatchEvent(startedLoad);
+
         const products = await getProducts();
         render(products, container);
     } catch (error) {
         alert(error.message);
+    } finally {
+        const finishedLoad = new CustomEvent("load-products-finished");
+        container.dispatchEvent(finishedLoad);
     }
 
 }
