@@ -16,7 +16,7 @@ export const productElement = (product) => {
 
 export const productEmptyWarning = () => {
     const warning = `
-        <h3>Oops, no products available! 😬</h3>
+        <h3 class="hd-2">Oops, no products available! 😬</h3>
     `;
 
     return warning;
