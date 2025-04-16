@@ -1,0 +1,46 @@
+.main {
+    margin-bottom: 0;
+}
+
+.form-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-element {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 1rem;
+    
+    label {
+        font-weight: 700;
+    }
+
+    input {
+        padding: 10px;
+        border: 1px solid var(--text-color-light);
+        border-radius: var(--border-radius);
+
+        ::placeholder {
+            color: var(--text-color-light);
+        }
+    }
+}
+
+#password-help {
+    color: var(--text-color-light);
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+}

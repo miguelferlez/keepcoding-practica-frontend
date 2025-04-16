@@ -3,11 +3,12 @@
     --primary-color: #ae3dd1;
     --primary-color-hover: #8d2faa;
     --error-color: #f3614d;
+    --error-color-hover: #d25241;
     --success-color: #3dd180;
+    --success-color-hover: #31ac68;
     --text-color: #000000;
     --text-color-light: #6c757d;
     --border-radius: 0.5rem;
-    --border-color: #e2e8f0;
 
     font-family: 'Baloo 2', sans-serif;
     font-weight: 400;
