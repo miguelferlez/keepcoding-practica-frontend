@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const productsContainer = document.querySelector(".product-list");
     const loaderContainer = document.querySelector(".loader-container");
     const notificationsContainer = document.querySelector(".notifications");
-    const { notify } = showNotifications(notificationsContainer)
+    const { notify } = showNotifications(notificationsContainer);
 
     hamburger.addEventListener("click", () => { toggleMenu(hamburger, navMenu) });
     productsContainer.addEventListener("load-products-started", () => {
