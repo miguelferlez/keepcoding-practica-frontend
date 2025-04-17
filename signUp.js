@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const loaderContainer = document.querySelector(".loader-container");
     const { notify } = showNotifications(notificationsContainer);
     
+    signUpForm.addEventListener("signup-started", () => {
+        toggleLoader(loaderContainer);
+    });
     signUpForm.addEventListener("signup-failed", (event) => {
         const errorMessage = event.detail;
         notify(errorMessage);
@@ -16,7 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
     signUpForm.addEventListener("signup-succeed", (event) => {
         const successMessage = event.detail.message;
         const messageType = event.detail.type;
-        notify(successMessage, messageType); 
+        localStorage.setItem("signUpNotification", JSON.stringify({
+            message: successMessage, 
+            type: messageType
+        }));
+        toggleLoader(loaderContainer); 
+    });
+    signUpForm.addEventListener("signup-finished", () => {
         toggleLoader(loaderContainer);
     });
 

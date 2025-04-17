@@ -27,6 +27,9 @@ export function signUp(form) {
         }
 
         if (errors.length === 0) {
+            const startedSignUp = new CustomEvent("signup-started");
+            form.dispatchEvent(startedSignUp);
+            
             handleCreateUser(name, email, password, form);
         } else {
             errors.forEach(error => {
@@ -45,7 +48,7 @@ export function signUp(form) {
 
             const succeedSignUp = new CustomEvent("signup-succeed", {
                 detail: {
-                    message: "Account successfully created!",
+                    message: "Your account has been successfully created!",
                     type: "success"
                 }
             });
@@ -53,12 +56,15 @@ export function signUp(form) {
 
             setTimeout(() => {
                 window.location = "/";
-            }, 5000);
+            }, 3000);
         } catch (error) {
             const failedSignUp = new CustomEvent("signup-failed", {
                 detail: error.message
             });
             form.dispatchEvent(failedSignUp);
+        } finally {
+            const finishedSignUp = new CustomEvent("signup-finished");
+            form.dispatchEvent(finishedSignUp);
         }
     }
 }
