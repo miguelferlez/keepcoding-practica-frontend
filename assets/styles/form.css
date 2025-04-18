@@ -21,6 +21,18 @@
     max-width: 420px;
 }
 
+.form-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+    .hd-1,
+    .hd-2 {
+        margin: 0;
+    }
+}
+
 .form-element {
     display: flex;
     flex-direction: column;

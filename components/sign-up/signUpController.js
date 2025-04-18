@@ -17,13 +17,11 @@ export function signUp(form) {
 
         if (!emailRegExp.test(email)) {
             errors.push("Email format is not correct.");
-            emailInput.classList.toggle("invalid");
         }
 
         if (password !== passwordConfirm) {
             errors.push("Password values do not match.");
             passwordInput.classList.toggle("invalid");
-            passwordConfirmInput.classList.toggle("invalid");
         }
 
         if (errors.length === 0) {
