@@ -21,7 +21,6 @@ export function signUp(form) {
 
         if (password !== passwordConfirm) {
             errors.push("Password values do not match.");
-            passwordInput.classList.toggle("invalid");
         }
 
         if (errors.length === 0) {

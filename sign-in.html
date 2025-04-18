@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallafront - Sign In</title>
+    <link rel="stylesheet" href="./assets/styles/normalize.css">
+    <link rel="stylesheet" href="./assets/styles/common.css">
+    <link rel="stylesheet" href="./assets/styles/components.css">
+    <link rel="stylesheet" href="./assets/styles/loader.css">
+    <link rel="stylesheet" href="./assets/styles/notifcation.css">
+    <link rel="stylesheet" href="./assets/styles/form.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+</head>
+
+<body>
+    <div class="loader-container hidden">
+        <div class="loader"></div>
+    </div>
+    <main class="main">
+        <div class="form-container">
+            <div class="form">
+                <div class="notifications"></div>
+                <div class="form-header">
+                    <h2 class="hd-1">Sign In</h2>
+                    <a href="/" class="btn-outline" title="Go back">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                    </a>
+                </div>
+                <form>
+                    <div class="form-element">
+                        <label for="email">Email</label>
+                        <input 
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required
+                        />
+                    </div>
+                    <div class="form-element">
+                        <label for="password">Password</label>
+                        <input 
+                            type="password"
+                            name="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            minlength="6"
+                            required
+                        />
+                    </div>
+                    <div class="form-buttons">
+                        <button type="submit" class="btn">Sign in</button>
+                        <a href="/sign-up.html" class="btn-outline">I don't have an account</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="./signIn.js"></script>
+</body>
+
+</html>
