@@ -16,6 +16,9 @@ export function signIn(form) {
         }
 
         if (errors.length === 0) {
+            const startedSignIn = new CustomEvent("signin-started");
+            form.dispatchEvent(startedSignIn);
+
             handleLoginUser(email, password);
         } else {
             errors.forEach(error => {
@@ -44,6 +47,9 @@ export function signIn(form) {
                 detail: error.message
             });
             form.dispatchEvent(failedSignIn);
+        } finally {
+            const finishedSignIn = new CustomEvent("signin-finished");
+            form.dispatchEvent(finishedSignIn);
         }
     }
 }
