@@ -2,10 +2,12 @@ import { toggleMenu } from "./components/hamburger-menu/hamburgerMenuController.
 import { toggleLoader } from "./components/loader/loaderController.js";
 import { showProducts } from "./components/show-products/showProductsController.js";
 import { showNotifications } from "./components/notifications/notificationsController.js";
+import { handleSession } from "./components/session/sessionController.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-menu");
+    const greetingHeader = document.querySelector(".greeting");
     const productsContainer = document.querySelector(".product-list");
     const loaderContainer = document.querySelector(".loader-container");
     const notificationsContainer = document.querySelector(".notifications");
@@ -24,10 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
         notify(errorMessage);
     });
 
+    handleSession(navMenu, greetingHeader);
+
     if (signUpNotification) {
         notify(signUpNotification.message, signUpNotification.type);
         localStorage.removeItem("signUpNotification");
     }
-    showProducts(productsContainer);
 
+    showProducts(productsContainer);
 });
