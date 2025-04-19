@@ -28,6 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     handleSession(navMenu, greetingHeader);
 
+    productsContainer.addEventListener("get-user-failed", (event) => {
+        const errorMessage = event.detail;
+        notify(errorMessage);
+    });
+
     if (signUpNotification) {
         notify(signUpNotification.message, signUpNotification.type);
         localStorage.removeItem("signUpNotification");
