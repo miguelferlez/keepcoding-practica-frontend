@@ -43,17 +43,25 @@
         font-weight: 700;
     }
 
-    input {
+    input,
+    textarea {
         padding: 10px;
         border: 1px solid var(--text-color-light);
         border-radius: var(--border-radius);
 
-        ::placeholder {
-            color: var(--text-color-light);
+        &::placeholder {
+            color: var(--text-color-light)
         }
+    }
+
+    p {
+        margin: 0;
     }
 }
 
+#image-help,
+#name-help,
+#desc-help,
 #email-help,
 #password-help {
     color: var(--text-color-light);
@@ -68,4 +76,74 @@
     button {
         justify-content: center;
     }
+}
+
+.form-group {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    
+    .choice {
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        flex: 1;
+        border: 1px solid var(--text-color-light);
+        background-color: transparent;
+        border-radius: var(--border-radius);
+        transition: all 0.3s ease-in-out;
+    }
+    
+    label {
+        width: 100%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        gap: 0.5rem;
+        
+    }
+    
+    input[type="radio"] {
+        display: none;
+    }
+
+    .choice:has(input:checked) {
+        border: 1px solid var(--selected-color);
+        background-color: var(--selected-color);
+        color: var(--text-color);
+    }
+
+}
+
+.input-icon {
+    position: relative;
+
+    input {
+        width: 100%;
+        padding-left: 25px;
+        padding-right: 10px;
+    }
+
+    i {
+        position: absolute;
+        display: block;
+        transform: translate(0, -50%);
+        top: 50%;
+        width: 30px;
+        text-align: center;
+        font-style: normal;
+        color: var(--text-color-light);
+    }
+
+    &.right {
+        input {
+            padding-right: 25px;
+            padding-left: 10px;
+        }
+
+        i {
+            right: 0;
+        }
+    }    
 }
