@@ -33,6 +33,33 @@
 
 .card-text {
     color: var(--text-color-light);
+    margin-bottom: 0.5rem;
+
+    &.title {
+        font-weight: 700;
+    }
+
+    &.description {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
+
+.card-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    color: var(--bg-color);
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius);
+    gap: 0.5rem;
+    
+    p {
+        font-weight: 700;
+        margin: 0;
+    }
 }
 
 @media screen and (hover:hover) {

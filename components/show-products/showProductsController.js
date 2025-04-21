@@ -1,3 +1,4 @@
+import { placeholderImage } from "../utils/const.js";
 import { getProducts } from "./showProductsModel.js";
 import { productElement, productEmptyWarning } from "./showProductsView.js";
 
@@ -8,6 +9,11 @@ export async function showProducts(container) {
         if (!!products.length > 0) {
             products.forEach(product => {
                 const productItem = document.createElement("li");
+                
+                if (!product.image) {
+                    product.image = placeholderImage;
+                }
+
                 productItem.innerHTML = productElement(product);
                 container.appendChild(productItem);
             });
