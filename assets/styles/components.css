@@ -32,8 +32,8 @@
 
     &.error:hover {
         color: var(--bg-color);
-        border: 1px solid var(--error-color);
-        background-color: var(--error-color);
+        border: 1px solid var(--error-color-hover);
+        background-color: var(--error-color-hover);
     }
 }
 

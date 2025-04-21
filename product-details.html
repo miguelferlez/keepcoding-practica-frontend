@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallafront - Product</title>
+    <link rel="stylesheet" href="./assets/styles/normalize.css">
+    <link rel="stylesheet" href="./assets/styles/common.css">
+    <link rel="stylesheet" href="./assets/styles/components.css">
+    <link rel="stylesheet" href="./assets/styles/loader.css">
+    <link rel="stylesheet" href="./assets/styles/notifcation.css">
+    <link rel="stylesheet" href="./assets/styles/header.css">
+    <link rel="stylesheet" href="./assets/styles/details.css">
+    <link rel="stylesheet" href="./assets/styles/card.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0">
+</head>
+
+<body>
+    <div class="loader-container hidden">
+        <div class="loader"></div>
+    </div>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-logo">
+                <a href="/"><img src="./assets/images/wallafront-logo.svg" alt="Wallafront"></a>
+            </div>
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-menu"></ul>
+        </nav>
+    </header>
+    <main class="main">
+        <div class="notifications"></div>
+        <div class="product-container"></div>
+    </main>
+    <script type="module" src="./productDetails.js"></script>
+</body>
+
+</html>

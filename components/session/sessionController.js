@@ -2,7 +2,7 @@ import { authorizedNavMenu, unauthorizedNavMenu } from "./sessionNavView.js";
 import { authorizedHeading, authorizedHeadingWithName, unauthorizedHeading } from "./sessionHeadingView.js";
 import { getLoggedInUser } from "./sessionUser.js";
 
-export const handleSession = async (container, header) => {
+export const handleSession = async (container, header=null) => {
     const isUserLoggedIn = Boolean(localStorage.getItem("token"));
     
     if (isUserLoggedIn) {
@@ -10,7 +10,9 @@ export const handleSession = async (container, header) => {
             const user = await getLoggedInUser();
     
             container.innerHTML = authorizedNavMenu();
-            header.innerHTML = user.nickname ? authorizedHeadingWithName(user) : authorizedHeading();
+            if (header) {
+                header.innerHTML = user.nickname ? authorizedHeadingWithName(user) : authorizedHeading();
+            }
     
             const signOutBtn = container.querySelector("button");
             signOutBtn.addEventListener("click", () => {
@@ -26,6 +28,8 @@ export const handleSession = async (container, header) => {
         }
     } else {
         container.innerHTML = unauthorizedNavMenu();
-        header.innerHTML = unauthorizedHeading();
+        if (header) {
+            header.innerHTML = unauthorizedHeading();
+        }
     }
 };

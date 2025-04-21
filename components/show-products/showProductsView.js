@@ -1,7 +1,7 @@
 export const productElement = (product) => {
     const productTypeIcon = product.type === "sell" ? typeSell() : typeBuy();
     const element = `
-        <a href="#">
+        <a href="./product-details.html?id=${product.id}">
             <div class="card">
                 <img src="${product.image}" alt="">
                 <div class="card-body">

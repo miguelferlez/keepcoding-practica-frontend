@@ -12,10 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const loaderContainer = document.querySelector(".loader-container");
     const notificationsContainer = document.querySelector(".notifications");
     const { notify } = showNotifications(notificationsContainer);
+
     const signUpNotification = JSON.parse(localStorage.getItem("signUpNotification"));
     const addProductNotification = JSON.parse(localStorage.getItem("addProductNotification"));
+    const removeProductNotification = JSON.parse(localStorage.getItem("removeProductNotification"));
 
     hamburger.addEventListener("click", () => { toggleMenu(hamburger, navMenu) });
+    
     productsContainer.addEventListener("load-products-started", () => {
         toggleLoader(loaderContainer);
     });
@@ -28,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     handleSession(navMenu, greetingHeader);
-
     productsContainer.addEventListener("get-user-failed", (event) => {
         const errorMessage = event.detail;
         notify(errorMessage);
@@ -38,10 +40,13 @@ document.addEventListener("DOMContentLoaded", () => {
         notify(signUpNotification.message, signUpNotification.type);
         localStorage.removeItem("signUpNotification");
     }
-
     if (addProductNotification) {
         notify(addProductNotification.message, addProductNotification.type);
         localStorage.removeItem("addProductNotification");
+    }
+    if (removeProductNotification) {
+        notify(removeProductNotification.message, removeProductNotification.type);
+        localStorage.removeItem("removeProductNotification");
     }
 
     showProducts(productsContainer);

@@ -1,0 +1,40 @@
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.product-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 768px;
+}
+
+.product-image {
+    display: flex;
+    justify-content: center;
+    
+    img {
+        width: 100%;
+        max-height: 512px;
+        object-fit: cover;
+        object-position: center;
+        background-color: var(--selected-color);
+        border-radius: var(--border-radius);
+    }
+}
+
+.product-header,
+.product-user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    .hd-1,
+    .hd-2,
+    .card-text {
+        margin: 0
+    }
+}
