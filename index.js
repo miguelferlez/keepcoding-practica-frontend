@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const notificationsContainer = document.querySelector(".notifications");
     const { notify } = showNotifications(notificationsContainer);
     const signUpNotification = JSON.parse(localStorage.getItem("signUpNotification"));
+    const addProductNotification = JSON.parse(localStorage.getItem("addProductNotification"));
 
     hamburger.addEventListener("click", () => { toggleMenu(hamburger, navMenu) });
     productsContainer.addEventListener("load-products-started", () => {
@@ -36,6 +37,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (signUpNotification) {
         notify(signUpNotification.message, signUpNotification.type);
         localStorage.removeItem("signUpNotification");
+    }
+
+    if (addProductNotification) {
+        notify(addProductNotification.message, addProductNotification.type);
+        localStorage.removeItem("addProductNotification");
     }
 
     showProducts(productsContainer);
