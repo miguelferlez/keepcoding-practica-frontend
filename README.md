@@ -51,22 +51,24 @@ Para instalar el proyecto en tu máquina, sigue los siguientes pasos:
 
 Una vez completada la instalación, para hacer uso la app se deben seguir los siguientes pasos:
 
-1. Inicia sparrest.js:
+1. Mete el archivo del repositorio `db.json` en el directorio de sparrest.js
+
+2. Inicia sparrest.js:
     ```bash
     npm start
     ```
 
-2. Navega hasta el directorio del proyecto o ejecuta el terminal en dicha ruta:
+3. Navega hasta el directorio del proyecto o ejecuta el terminal en dicha ruta:
     ```bash
     cd Path/to/keepcoding-practica-frontend
     ```
 
-3. Inicia `live-server` en el repositorio del proyecto:
+4. Inicia `live-server` en el repositorio del proyecto:
     ```bash
     npx live-server
     ```
 
-4. En tu navegador, dirígete a [localhost:8080](http://localhost:8080).
+5. En tu navegador, dirígete a [localhost:8080](http://localhost:8080).
 
 ## Tecnologías y Prácticas Utilizadas
 
