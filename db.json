@@ -1,0 +1,110 @@
+{
+  "users": [
+    {
+      "nickname": "Admin",
+      "username": "admin@user.com",
+      "password": "$2b$10$kwPAwi6UbmRuCVATk7x9Hu.yL3aZGpiwvOOB0VDOJVo4lUnZkvjDq",
+      "id": 1
+    },
+    {
+      "nickname": "",
+      "username": "noname@user.com",
+      "password": "$2b$10$kwPAwi6UbmRuCVATk7x9Hu.yL3aZGpiwvOOB0VDOJVo4lUnZkvjDq",
+      "id": 2
+    },
+    {
+      "nickname": "John",
+      "username": "john@user.com",
+      "password": "$2b$10$kwPAwi6UbmRuCVATk7x9Hu.yL3aZGpiwvOOB0VDOJVo4lUnZkvjDq",
+      "id": 3
+    },
+    {
+      "nickname": "Jane",
+      "username": "jane@user.com",
+      "password": "$2b$10$kwPAwi6UbmRuCVATk7x9Hu.yL3aZGpiwvOOB0VDOJVo4lUnZkvjDq",
+      "id": 4
+    }
+  ],
+  "products": [
+    {
+      "title": "Lorem Ipsum",
+      "description": "Dolor sit amet, consectetur adipiscing elit. \n\nNullam velit ipsum, faucibus et augue sed, dapibus euismod urna. Proin enim orci, eleifend at arcu nec, sodales bibendum risus.",
+      "price": "20.00",
+      "image": "http://localhost:8000//file-1745332858383.jpg",
+      "type": "buy",
+      "userId": 1,
+      "updatedAt": "2025-04-22T14:40:58.432Z",
+      "id": 1
+    },
+    {
+      "title": "Consectetur",
+      "description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque molestie nulla eros, ac tincidunt massa maximus sodales.",
+      "price": "44.95",
+      "image": "http://localhost:8000//file-1745333093156.jpg",
+      "type": "sell",
+      "userId": 1,
+      "updatedAt": "2025-04-22T14:44:53.203Z",
+      "id": 2
+    },
+    {
+      "title": "Ipsum",
+      "description": "Nunc porttitor, libero ac malesuada lobortis, tortor ante feugiat purus, auctor consectetur lorem nisl malesuada leo. Suspendisse eu ipsum erat. Aliquam id egestas ligula. Aenean molestie ex id ex finibus, at dictum nisl vulputate. Integer scelerisque lectus a suscipit tempus. Nam molestie nisl feugiat enim sodales.",
+      "price": "50.00",
+      "image": "./assets/images/placeholder.jpg",
+      "type": "buy",
+      "userId": 2,
+      "updatedAt": "2025-04-22T14:50:44.078Z",
+      "id": 3
+    },
+    {
+      "title": "Tincidunt massa",
+      "description": "Etiam sed sollicitudin velit, non tristique justo. In hac habitasse platea dictumst. Fusce fermentum tincidunt ligula at efficitur. Donec at quam cursus, imperdiet nibh id, dapibus metus.\n\nPhasellus nec volutpat orci. Nulla facilisi. Nam ac elementum enim, a convallis turpis. Sed tellus purus, auctor sit amet libero.",
+      "price": "15.00",
+      "image": "http://localhost:8000//file-1745333542361.jpg",
+      "type": "sell",
+      "userId": 2,
+      "updatedAt": "2025-04-22T14:52:22.396Z",
+      "id": 4
+    },
+    {
+      "title": "Curabitur eget",
+      "description": "Aenean sed ex vel est interdum tincidunt.",
+      "price": "16.00",
+      "image": "http://localhost:8000//file-1745334970869.jpg",
+      "type": "sell",
+      "userId": 2,
+      "updatedAt": "2025-04-22T15:16:10.901Z",
+      "id": 5
+    },
+    {
+      "title": "Maecenas",
+      "description": "Suspendisse ut sollicitudin ante. \n\nCras luctus quam ac lectus rutrum fringilla. Sed quis lectus lacus.",
+      "price": "160.00",
+      "image": "./assets/images/placeholder.jpg",
+      "type": "sell",
+      "userId": 3,
+      "updatedAt": "2025-04-22T15:18:15.327Z",
+      "id": 6
+    },
+    {
+      "title": "Class aptent taciti",
+      "description": "Aliquam vel velit interdum, cursus ex accumsan, volutpat nisl. Vestibulum ac augue semper, pulvinar nisi tincidunt, tempus neque. In diam enim, varius posuere varius id, ultrices eget dolor. Integer eget pellentesque lacus, nec molestie enim. Quisque laoreet enim eget nibh consectetur eleifend. Nullam quis aliquet feli",
+      "price": "80.00",
+      "image": "http://localhost:8000//file-1745335225896.jpg",
+      "type": "buy",
+      "userId": 4,
+      "updatedAt": "2025-04-22T15:20:25.929Z",
+      "id": 7
+    },
+    {
+      "title": "Mauris nulla",
+      "description": "Integer eu dolor lorem. Integer consequat ex posuere tellus porttitor, sed accumsan lorem consectetur.\n\nInteger nisi erat, fermentum in ullamcorper tincidunt, facilisis interdum ipsum.",
+      "price": "95.00",
+      "image": "http://localhost:8000//file-1745335298042.jpg",
+      "type": "sell",
+      "userId": 4,
+      "updatedAt": "2025-04-22T15:21:38.075Z",
+      "id": 8
+    }
+  ]
+}
