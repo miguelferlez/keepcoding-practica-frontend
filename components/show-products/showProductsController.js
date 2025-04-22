@@ -9,15 +9,15 @@ export async function showProducts(container) {
         if (!!products.length > 0) {
             products.forEach(async product => {
                 const productItem = document.createElement("li");
+
+                productItem.innerHTML = productElement(product);
+                container.appendChild(productItem);
                 
                 if (product.image) {
                     product.image = await verifyProductImage(product.image, placeholderNotFoundImage)
                 } else {
                     product.image = placeholderImage;
                 }
-
-                productItem.innerHTML = productElement(product);
-                container.appendChild(productItem);
             });
         } else {
             container.classList.toggle("warning");
