@@ -8,3 +8,19 @@ export async function getProducts() {
         throw new Error("Unable to load products, please try later again!");
     }
 }
+
+export async function verifyProductImage(image, placeholder) {
+    try {
+        const response = await fetch(image, {
+            method: "HEAD"
+        });
+
+        if (!response.ok) {
+            throw new Error("Image not found")
+        }
+
+        return image;
+    } catch (error) {
+        return placeholder;
+    }
+}

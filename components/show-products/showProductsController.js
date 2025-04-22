@@ -1,5 +1,5 @@
-import { placeholderImage } from "../utils/const.js";
-import { getProducts } from "./showProductsModel.js";
+import { placeholderImage, placeholderNotFoundImage } from "../utils/const.js";
+import { getProducts, verifyProductImage } from "./showProductsModel.js";
 import { productElement, productEmptyWarning } from "./showProductsView.js";
 
 export async function showProducts(container) {
@@ -7,10 +7,12 @@ export async function showProducts(container) {
         container.innerHTML = "";
 
         if (!!products.length > 0) {
-            products.forEach(product => {
+            products.forEach(async product => {
                 const productItem = document.createElement("li");
                 
-                if (!product.image) {
+                if (product.image) {
+                    product.image = await verifyProductImage(product.image, placeholderNotFoundImage)
+                } else {
                     product.image = placeholderImage;
                 }
 

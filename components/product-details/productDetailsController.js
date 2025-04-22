@@ -1,5 +1,6 @@
 import { getLoggedInUser } from "../session/sessionUser.js";
-import { getProductDetails, removeProduct } from "./productDetailsModel.js";
+import { placeholderNotFoundImage } from "../utils/const.js";
+import { getProductDetails, removeProduct, verifyProductImage } from "./productDetailsModel.js";
 import { productDetailsElement, removeButtonElement } from "./productDetailsView.js";
 
 export const showProductDetails = async (container, productId) => {
@@ -32,6 +33,11 @@ export const showProductDetails = async (container, productId) => {
         container.dispatchEvent(startedLoad);
 
         const productDetails = await getProductDetails(productId);
+
+        if (productDetails.image) {
+            productDetails.image = await verifyProductImage(productDetails.image, placeholderNotFoundImage)
+        }
+
         container.innerHTML = productDetailsElement(productDetails);
 
         const token = localStorage.getItem("token");
