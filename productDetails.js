@@ -7,14 +7,22 @@ import { handleSession } from "./components/session/sessionController.js";
 document.addEventListener("DOMContentLoaded", () => {
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-menu");
+    const searchBar = document.querySelector(".search-bar");
     const loaderContainer = document.querySelector(".loader-container");
     const notificationsContainer = document.querySelector(".notifications");
     const productContainer = document.querySelector(".product-container");
     const { notify } = showNotifications(notificationsContainer);
     const searchParams = new URLSearchParams(window.location.search);
     const productId = searchParams.get("id");
-
+    
     hamburger.addEventListener("click", () => { toggleMenu(hamburger, navMenu) });
+    searchBar.addEventListener("submit", () => {
+        const titleInput = searchBar.querySelector("input");
+        const title = titleInput.value;
+        localStorage.setItem("searchProduct", JSON.stringify({
+            title: title
+        })); 
+    });
 
     handleSession(navMenu);
     
