@@ -1,8 +1,8 @@
 import { placeholderImage, placeholderNotFoundImage } from "../utils/const.js";
-import { getProducts, verifyProductImage } from "./showProductsModel.js";
+import { getProducts, getProductsByTitle, verifyProductImage } from "./showProductsModel.js";
 import { productElement, productEmptyWarning } from "./showProductsView.js";
 
-export async function showProducts(container) {
+export async function showProducts(container, params) {
     const render = (products, container) => {
         container.innerHTML = "";
 
@@ -28,8 +28,8 @@ export async function showProducts(container) {
     try {
         const startedLoad = new CustomEvent("load-products-started");
         container.dispatchEvent(startedLoad);
-
-        const products = await getProducts();
+        console.log(params)
+        const products = params ? await getProductsByTitle(params) : await getProducts();
         render(products, container);
     } catch (error) {
         const failedLoad = new CustomEvent("load-products-failed", {

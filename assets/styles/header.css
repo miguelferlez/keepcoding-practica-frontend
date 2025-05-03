@@ -35,6 +35,22 @@
     margin: 0;
 }
 
+.search-bar {
+    flex: 1;
+    margin: 0 2rem;
+
+    #search {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius);
+
+        &::placeholder {
+            color: var(--text-color-light);
+        }
+    }
+}
+
 @media screen and (width < 768px) {
     .nav-menu {
         position: fixed;
