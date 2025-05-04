@@ -16,12 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const productId = searchParams.get("id");
     
     hamburger.addEventListener("click", () => { toggleMenu(hamburger, navMenu) });
-    searchBar.addEventListener("submit", () => {
+    searchBar.addEventListener("submit", (event) => {
+        event.preventDefault();
         const titleInput = searchBar.querySelector("input");
         const title = titleInput.value;
-        localStorage.setItem("searchProduct", JSON.stringify({
-            title: title
-        })); 
+        window.location.href = `/?title=${title}`
     });
 
     handleSession(navMenu);

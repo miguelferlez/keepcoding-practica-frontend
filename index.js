@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const signUpNotification = JSON.parse(localStorage.getItem("signUpNotification"));
     const addProductNotification = JSON.parse(localStorage.getItem("addProductNotification"));
     const removeProductNotification = JSON.parse(localStorage.getItem("removeProductNotification"));
-    const searchProduct = JSON.parse(localStorage.getItem("searchProduct"));
 
     hamburger.addEventListener("click", () => { toggleMenu(hamburger, navMenu) });
     searchBar.addEventListener("submit", () => { window.location = "/" });
@@ -52,10 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (removeProductNotification) {
         notify(removeProductNotification.message, removeProductNotification.type);
         localStorage.removeItem("removeProductNotification");
-    }
-    if (searchProduct) {
-        window.location = `/?title=${searchProduct.title}`
-        localStorage.removeItem("searchProduct");
     }
 
     showProducts(productsContainer, title);
