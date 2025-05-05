@@ -1,0 +1,14 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.page-list {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.active {
+    
+}

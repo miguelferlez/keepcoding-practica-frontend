@@ -1,6 +1,7 @@
 import { toggleMenu } from "./components/hamburger-menu/hamburgerMenuController.js";
 import { toggleLoader } from "./components/loader/loaderController.js";
 import { showProducts } from "./components/show-products/showProductsController.js";
+import { showPages } from "./components/pagination/paginationController.js";
 import { showNotifications } from "./components/notifications/notificationsController.js";
 import { handleSession } from "./components/session/sessionController.js";
 
@@ -10,11 +11,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchBar = document.querySelector(".search-bar");
     const greetingHeader = document.querySelector(".greeting");
     const productsContainer = document.querySelector(".product-list");
+    const pagesContainer = document.querySelector(".page-list");
     const loaderContainer = document.querySelector(".loader-container");
     const notificationsContainer = document.querySelector(".notifications");
     const { notify } = showNotifications(notificationsContainer);
     const searchParams = new URLSearchParams(window.location.search);
     const title = searchParams.get("title");
+    const page = searchParams.get("_page");
 
     const signUpNotification = JSON.parse(localStorage.getItem("signUpNotification"));
     const addProductNotification = JSON.parse(localStorage.getItem("addProductNotification"));
@@ -53,5 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.removeItem("removeProductNotification");
     }
 
-    showProducts(productsContainer, title);
+    showProducts(productsContainer, title, page);
+    showPages(pagesContainer, page);
 });

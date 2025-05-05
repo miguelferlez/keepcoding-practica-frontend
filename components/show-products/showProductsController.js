@@ -1,8 +1,9 @@
+import { getPages } from "../pagination/paginationModel.js";
 import { placeholderImage, placeholderNotFoundImage } from "../utils/const.js";
-import { getProducts, getProductsByTitle, verifyProductImage } from "./showProductsModel.js";
+import { getProducts, getProductsByTitle, getProductsLimit, verifyProductImage } from "./showProductsModel.js";
 import { productElement, productEmptyWarning } from "./showProductsView.js";
 
-export async function showProducts(container, params) {
+export async function showProducts(container, searchParam, currentPage) {
     const render = (products, container) => {
         container.innerHTML = "";
 
@@ -28,8 +29,9 @@ export async function showProducts(container, params) {
     try {
         const startedLoad = new CustomEvent("load-products-started");
         container.dispatchEvent(startedLoad);
-        console.log(params)
-        const products = params ? await getProductsByTitle(params) : await getProducts();
+
+        const products = searchParam ? await getProductsByTitle(searchParam) : await getProductsLimit(currentPage);
+        
         render(products, container);
     } catch (error) {
         const failedLoad = new CustomEvent("load-products-failed", {

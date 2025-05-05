@@ -9,6 +9,17 @@ export async function getProducts() {
     }
 }
 
+export async function getProductsLimit(page=1, limit=8) {
+    try {
+        const response = await fetch(`http://localhost:8000/api/products?_page=${page}&_limit=${limit}`);
+        const products = await response.json();
+
+        return products;
+    } catch (error) {
+        throw new Error("Unable to load products, please try later again!");
+    }
+}
+
 export async function getProductsByTitle(searchParam) {
     try {
         const response = await fetch(`http://localhost:8000/api/products/?title_like=${searchParam}`);
